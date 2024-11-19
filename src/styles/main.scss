@@ -4,6 +4,7 @@
 
 $green:#27300f;
 $orange: #d26a22;
+$dark-orange: #cf5c0d;
 $white: #ffffff;
 
 $font-jost: "Jost", sans-serif;
@@ -17,6 +18,10 @@ body {
     font-size: 1.6rem;
     font-family: $font-jost;
     color:$green;
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
 
 
 }
@@ -31,6 +36,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 4rem;
+    gap:8rem;
     &__nav {
         display: flex;
         list-style-type: none;
@@ -51,13 +57,22 @@ body {
         color:$green;
         font-weight: 500;
         text-decoration: none;
+        flex-basis: 200px;
+        letter-spacing: 0.13rem;
+        text-align: right;
         &:hover {
             color: $orange;
         }
     }
+
+    &__navigation {
+
+        flex-grow: 1;
+        margin-left: 4rem;
+    }
     &__cart {
         display: block;
-        width: 4rem;
+        flex-basis: 4rem;
         height: 4rem;
         border-radius: 100%;
         background-color: $orange;
@@ -77,7 +92,7 @@ body {
         font-size: .8rem;
         color: $white;
         position: absolute;
-        right:1rem;
+        right:0.7rem;
         top:.6rem;
     }
 }
@@ -85,10 +100,15 @@ body {
 .logo {
     display: block;
     background-image: url(../images/logo.svg);
-    width: 12rem;
+    flex-basis: 12rem;
     height: 3.2rem;
     background-repeat: no-repeat;
     background-size: contain;
+    &_footer {
+        flex-basis: 18rem;
+        height: 4.8rem;
+        
+    }
 }
 
 .container {
@@ -99,10 +119,10 @@ body {
 }
 
 .main {
-    background-image: url(../images/main.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
+    // background-image: url(../images/main.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position-x: center;
     position: relative;
     padding-bottom: 187px;
     z-index: 0;
@@ -136,6 +156,8 @@ body {
     }
     &__image {
         width: 92%;
+        border-radius: 100%;
+        animation: shadow 4s infinite;
     }
     &__line {
         width: 656px;
@@ -307,6 +329,11 @@ body {
     border-radius: 3.6rem;
     display: inline-block;
     border: none;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+        background-color: $dark-orange;
+    }
     &_min {
         font-size: 1.4rem;
         padding: 2rem 3.4rem;
@@ -315,10 +342,10 @@ body {
 }
 
 .offer {
-    background-image: url(../images/offer.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
+    // background-image: url(../images/offer.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position-x: center;
     padding-top: 2rem;
     padding-bottom: 12.8rem;
     &__text {
@@ -748,18 +775,19 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-top: 7rem;
+        margin-top: 5.6rem;
+        margin-left: 12rem;
+        gap:12%;
     }
 
     &__text {
         margin: 0;
-        margin-left: 12rem;
-        flex-basis: 620px;
+        flex-basis: 44%;
     }
 
     &__right {
         margin: 0;
-        flex-basis: 470px;
+        flex-basis: 37%;
         margin-right: 12rem;
     }
 
@@ -779,7 +807,9 @@ body {
         padding-left: 0;
     }
     &__link {
-        color: $green
+        color: $green;
+        border-bottom: 1px solid #858881;
+        text-decoration: none;
     }
     &__item {
         display: flex;
@@ -789,33 +819,36 @@ body {
         &::before {
             content: '';
             width: 84px;
-            height: 45px;
+            height: 32px;
             background-position: center center;
             background-repeat: no-repeat;
             opacity: 0.4;
             margin-bottom: 1.5rem;
             margin-top: 3rem;
+            transition: .3s;
+            transform: scale(1);
             
         }
         &:hover::before{
             opacity: 1;
+            transform: scale(1.2);
         }
         &:nth-child(1) {
             &::before {
                 background-image: url(../images/mastercard.svg);
-                background-size: 60px 45px;
+                background-size: 53px 45px;
             }
         }
         &:nth-child(2) {
             &::before {
                 background-image: url(../images/visa.svg);
-                background-size: 70px 45px;
+                background-size: 74px 45px;
             }
         }
         &:nth-child(3) {
             &::before {
                 background-image: url(../images/paypal.svg);
-                background-size: 84px 60px;
+                background-size: 87px 60px;
             }
         }
     }
@@ -823,8 +856,8 @@ body {
 
 
 .contact {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 140px;
+    padding-bottom: 80px;
 }
 
 .contact-box {
@@ -853,6 +886,7 @@ body {
         font-size: 2.4rem;
         margin: 0;
         padding-left: 0;
+        margin-top: 4rem;
     }
     &__link {
         text-decoration: none;
@@ -862,6 +896,8 @@ body {
     &__listitem {
         display: flex;
         align-items: center;
+        gap:3rem;
+        margin-top: 1rem;
        
         &::before {
             content: '';
@@ -869,22 +905,22 @@ body {
             height: 40px;
             background-position: center center;
             background-repeat: no-repeat;
-            // margin-bottom: 1.5rem;
-            margin-right: 3rem;
+            fill:$orange;
+           
             
         }
         &:nth-child(1) {
             &::before {
                 background-image: url(../images/phone.svg);
-                background-size: 44px 41px;
-                color:$orange;
+                background-size: 29px 30px;
+                
             }
         }
         &:nth-child(2) {
             &::before {
                 background-image: url(../images/mail.svg);
-                background-size: 40px 40px;
-                color:$orange;
+                background-size: 29px 30px;
+                
             }
         }
       
@@ -943,4 +979,144 @@ body {
     }
 
 }
+
+footer {
+    
+    padding-top: 8rem; 
+    padding-bottom: 8rem; 
+    border-top: 1px solid #d4d6cf;
+}
+
+.footer {
+    // background-image: url(../images/footer.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position-x: center;
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-basis: 66%;
+    }
+    &__box {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        
+        margin-bottom: 2rem;
+
+    }
+    &__link{
+        text-decoration: none;
+        color:$green;
+        &:hover {
+            color:$orange;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+    }
+    &__text {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__copy {
+        margin: 0;
+        color: rgba($green, .6);
+        font-size: 1.6rem;
+    }
+
+    &__author {
+        margin: 0;
+        color: rgba($green, .6);
+        font-size: 1.6rem;
+        
+    }
+    &__tel {
+        font-size: 2.7rem;
+        text-decoration: none;
+        color:$green
+    }
+
+   
+
+
+}
+
+.footer-social {
+    display: flex;
+    padding-left: 0;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+
+    &__item {
+        
+        
+    }
+    &__link {
+
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 2px solid $green;
+        border-radius: 100%;
+        margin-bottom: 1.5rem;
+        display: block;
+        width: 4.6rem;
+        height: 4.6rem;
+        opacity: 0.8;
+        transition: .3s;
+        &:hover {
+            opacity: 1;
+        }
+        
+
+    }
+    &__vk {
+        background-image: url(../images/vk.svg);
+        background-size: 2.3rem;
+        
+    }
+
+    &__inst {
+        background-image: url(../images/instagram.svg);
+        background-size: 1.8rem;
+    }
+
+    &__fb {
+        background-image: url(../images/facebook.svg);
+        background-size: 1.8rem;
+    }
+}
+
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+    50% {
+        box-shadow:20px 20px 33px 0 rgba($green, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+
+}
+
+
 
