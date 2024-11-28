@@ -75,3 +75,14 @@ var swiper = new Swiper(".offerSwiper", {
     }
     
   });
+
+
+  //Dropdown
+
+  function openModal (){
+    document.getElementById("dropdown").style.display = "block";
+  }
+
+  function closeModal (){
+    document.getElementById("dropdown").style.top = "-400px";
+  }
